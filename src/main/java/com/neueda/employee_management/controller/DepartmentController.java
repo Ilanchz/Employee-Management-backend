@@ -17,7 +17,6 @@ public class DepartmentController {
     @GetMapping
     public List<Department> getAllDepartments() {
         return departmentService.getAllDepartments();
-//        return new Department(deptID:"6");
     }
 
     @GetMapping("/{id}")
