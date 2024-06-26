@@ -1,5 +1,6 @@
 package com.neueda.employee_management.controller;
 
+import com.neueda.employee_management.model.Employee;
 import com.neueda.employee_management.model.Organisation;
 import com.neueda.employee_management.service.OrganisationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,11 @@ public class OrganisationController {
     @DeleteMapping("/{id}")
     public void deleteOrganisation(@PathVariable Long id) {
         organisationService.deleteOrganisation(id);
+    }
+
+    @GetMapping("/organisations/{organisationId}/employees")
+    public List<Employee> getAllEmployeesByOrganisationId(@PathVariable Long organisationId) {
+        return organisationService.getAllEmployeesByOrganisationId(organisationId);
     }
 }
 

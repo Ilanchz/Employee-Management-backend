@@ -2,6 +2,7 @@ package com.neueda.employee_management.service;
 
 
 
+import com.neueda.employee_management.model.Employee;
 import com.neueda.employee_management.model.Organisation;
 import com.neueda.employee_management.repository.OrganisationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,10 @@ public class OrganisationServiceImpl implements OrganisationService {
     @Override
     public void deleteOrganisation(Long id) {
         organisationRepository.deleteById(id);
+    }
+
+    public List<Employee> getAllEmployeesByOrganisationId(Long organisationId) {
+        Organisation organisation = organisationRepository.findById(organisationId).orElseThrow(() -> new ResourceNotFoundException("Organisation not found with id " + organisationId));
+        return organisation.getEmployees();
     }
 }
