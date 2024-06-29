@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
+import java.util.List;
 @Setter
 @Getter
 @Entity
@@ -17,6 +17,9 @@ public class Department {
     private String dept_Name;
     private int total_Employees;
     private double total_Cost;
+
+//    @OneToMany(mappedBy = "department")
+//    private List<Employee> employees;
 
     public Department() {
     }

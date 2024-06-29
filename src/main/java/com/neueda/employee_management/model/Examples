@@ -1,0 +1,137 @@
+1. API: GetOrganisations(no input):  returns Array of object
+Example:
+
+[
+  { "name": "Compliance", "cost": 1000000, "id": "org001" },
+  { "name": "Risk Management", "cost": 1200000, "id": "org002" },
+  { "name": "Executive Management", "cost": 1500000, "id": "org003" },
+  { "name": "Retail Banking Division", "cost": 800000, "id": "org004" },
+  { "name": "Corporate Banking Division", "cost": 900000, "id": "org005" },
+  { "name": "Investment Banking Division", "cost": 1300000, "id": "org006" },
+  { "name": "Technology and Operations", "cost": 1100000, "id": "org007" },
+  { "name": "Internal Audit", "cost": 950000, "id": "org008" },
+  { "name": "Treasury Department", "cost": 1050000, "id": "org009" },
+  { "name": "Customer Service and Relationship Management", "cost": 850000, "id": "org010" }
+]
+
+
+2. API: GetDepartments(no input): returns Array of object
+Example:
+
+[
+  { "name": "HR", "cost": 500000, "id": "dep001" },
+  { "name": "Finance", "cost": 600000, "id": "dep002" },
+  { "name": "Managers", "cost": 400000, "id": "dep003" },
+  { "name": "Engineers", "cost": 700000, "id": "dep004" },
+  { "name": "Legal", "cost": 550000, "id": "dep005" },
+  { "name": "Marketing", "cost": 480000, "id": "dep006" },
+  { "name": "IT", "cost": 620000, "id": "dep007" },
+  { "name": "Operations", "cost": 530000, "id": "dep008" },
+  { "name": "Compliance", "cost": 580000, "id": "dep009" },
+  { "name": "Audit", "cost": 510000, "id": "dep010" }
+]
+
+
+3. API: GetEmployees(Inputs: Organisation ID: string, Department ID: string): returns Array of object
+
+Example:
+
+[
+  {
+    "id": "CV250042",
+    "name": "Alexander Martinez",
+    "currentlyWorking": true,
+    "salary": 80000,
+    "resigned": false,
+    "projectsContributed": ["Project N", "Project O"],
+    "yearsOfExperience": 7,
+    "attendance": "89%",
+    "age": 31,
+    "gender": "Male",
+    "organizationId": "org005",
+    "departmentId": "dep004"
+  },
+  {
+    "id": "CV250043",
+    "name": "Emily Johnson",
+    "currentlyWorking": true,
+    "salary": 72000,
+    "resigned": false,
+    "projectsContributed": ["Project P", "Project Q"],
+    "yearsOfExperience": 5,
+    "attendance": "92%",
+    "age": 28,
+    "gender": "Female",
+    "organizationId": "org007",
+    "departmentId": "dep007"
+  },
+  {
+    "id": "CV250044",
+    "name": "Michael Lee",
+    "currentlyWorking": false,
+    "salary": 85000,
+    "resigned": true,
+    "projectsContributed": ["Project R"],
+    "yearsOfExperience": 8,
+    "attendance": "85%",
+    "age": 34,
+    "gender": "Male",
+    "organizationId": "org009",
+    "departmentId": "dep008"
+  }
+]
+
+4. API: EditEmployee(Input: OrganisationId, DepartmentID, SOEID/EmployeeID) returns either OK status or edited object
+
+Example Response:
+
+{
+  "name": "Alexander Martinez",
+  "currentlyWorking": true,
+  "salary": 85000,
+  "resigned": false,
+  "projectsContributed": ["Project N", "Project O", "Project P"],
+  "yearsOfExperience": 8,
+  "attendance": "90%",
+  "age": 32,
+  "gender": "Male",
+  "organizationId": "org005",
+  "departmentId": "dep004"
+}
+
+5. API: DeleteEmployee(Input: OrganisationId, DepartmentID, SOEID/EmployeeID) returns either OK status or deleted object
+
+Example Response:
+
+{
+  "name": "Alexander Martinez",
+  "currentlyWorking": true,
+  "salary": 85000,
+  "resigned": false,
+  "projectsContributed": ["Project N", "Project O", "Project P"],
+  "yearsOfExperience": 8,
+  "attendance": "90%",
+  "age": 32,
+  "gender": "Male",
+  "organizationId": "org005",
+  "departmentId": "dep004"
+}
+
+
+6. API: SearchEmployee(Input: OrganisationId, DepartmentID, SOEID/EmployeeID) returns searched object
+
+Example Response:
+
+{
+  "name": "Alexander Martinez",
+  "currentlyWorking": true,
+  "salary": 85000,
+  "resigned": false,
+  "projectsContributed": ["Project N", "Project O", "Project P"],
+  "yearsOfExperience": 8,
+  "attendance": "90%",
+  "age": 32,
+  "gender": "Male",
+  "organizationId": "org005",
+  "departmentId": "dep004"
+}

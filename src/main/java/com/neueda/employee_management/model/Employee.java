@@ -23,6 +23,7 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name = "dept_ID")
     private Department department;
+
     private String role;
     private String status; // Active or Inactive
     private double salary;

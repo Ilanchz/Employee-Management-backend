@@ -23,6 +23,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.findById(id).orElse(null);
     }
 
+//    public List<Employee> getEmployeesByDepartmentId(Long dept_ID) {
+//        return employeeRepository.findByDepartmentDeptId(dept_ID);
+//    }
+
     @Override
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);

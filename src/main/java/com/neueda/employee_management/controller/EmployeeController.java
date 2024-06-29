@@ -24,6 +24,12 @@ public class EmployeeController {
         return employeeService.getEmployeeById(id);
     }
 
+//    @GetMapping("/department/{dept_ID}")
+//    public List<Employee> getEmployeesByDepartmentId(@PathVariable Long dept_ID) {
+//        return employeeService.getEmployeesByDepartmentId(dept_ID);
+//    }
+
+
     @PostMapping
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeService.saveEmployee(employee);

@@ -24,6 +24,12 @@ public class DepartmentController {
         return departmentService.getDepartmentById(id);
     }
 
+    // Endpoint to get total employees by dept_ID
+    @GetMapping("/{deptId}/totalEmployees")
+    public int getTotalEmployeesByDeptId(@PathVariable Long deptId) {
+        return departmentService.getTotalEmployeesByDeptId(deptId);
+    }
+
     @PostMapping
     public Department createDepartment(@RequestBody Department department) {
         return departmentService.saveDepartment(department);
