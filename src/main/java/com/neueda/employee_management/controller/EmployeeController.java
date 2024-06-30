@@ -4,6 +4,7 @@ import com.neueda.employee_management.model.Employee;
 import com.neueda.employee_management.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -30,10 +31,19 @@ public class EmployeeController {
 //    }
 
 
+//    @PostMapping
+//    public Employee createEmployee(@RequestBody Employee employee) {
+//        return employeeService.saveEmployee(employee);
+//    }
+
+    // Endpoint to handle POST requests for creating a new employee
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeService.saveEmployee(employee);
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
+        Employee savedEmployee = employeeService.createEmployee(employee);
+        return ResponseEntity.ok(savedEmployee);
     }
+
+
 
     @PutMapping("/{id}")
     public Employee updateEmployee(@PathVariable Long id, @RequestBody Employee employee) {

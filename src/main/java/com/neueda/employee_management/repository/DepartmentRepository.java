@@ -10,4 +10,6 @@ public interface DepartmentRepository extends JpaRepository<Department, Long> {
     // Query to get total employees by dept_ID
     @Query("SELECT d.total_Employees FROM Department d WHERE d.dept_ID = :deptId")
     int findTotalEmployeesByDeptId(Long deptId);
+    // Method to find a department by its dept_ID
+   
 }

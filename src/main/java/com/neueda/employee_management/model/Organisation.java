@@ -25,7 +25,7 @@ import lombok.Setter;
 public class Organisation {
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)
-    private Long Citi_Id;
+    private Long Organisation_Id;
     private String name;
     private String location;
     private int total_Employees;
@@ -34,8 +34,8 @@ public class Organisation {
     public Organisation() {
     }
 
-    public Organisation(Long Citi_Id, String name, String location, int total_Employees, double total_Cost) {
-        this.Citi_Id = Citi_Id;
+    public Organisation(Long Organisation_Id, String name, String location, int total_Employees, double total_Cost) {
+        this.Organisation_Id = Organisation_Id;
         this.name = name;
         this.location = location;
         this.total_Employees = total_Employees;

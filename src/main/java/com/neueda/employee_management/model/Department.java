@@ -2,6 +2,7 @@ package com.neueda.employee_management.model;
 
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +19,9 @@ public class Department {
     private int total_Employees;
     private double total_Cost;
 
-//    @OneToMany(mappedBy = "department")
-//    private List<Employee> employees;
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("department")
+    private List<Employee> employees;
 
     public Department() {
     }

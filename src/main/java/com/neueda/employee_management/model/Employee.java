@@ -2,6 +2,7 @@ package com.neueda.employee_management.model;
 
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,9 +21,17 @@ public class Employee {
     private String last_Name;
     private int age;
     private String gender;
-    @ManyToOne
-    @JoinColumn(name = "dept_ID")
+//    @ManyToOne
+//    @JoinColumn(name = "dept_ID")
+//    private Department department;
+
+
+    @ManyToOne(fetch = FetchType.LAZY) // Lazy fetch to avoid eager fetching unless needed
+    @JoinColumn(name = "dept_ID", referencedColumnName = "dept_ID")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "employees"})
+//    avoid issues with lazy loading
     private Department department;
+
 
     private String role;
     private String status; // Active or Inactive

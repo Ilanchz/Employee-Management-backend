@@ -35,7 +35,7 @@ public class OrganisationController {
     // Update an existing organisation
     @PutMapping("/{id}")
     public Organisation updateOrganisation(@PathVariable Long id, @RequestBody Organisation organisation) {
-        organisation.setCiti_Id(id);
+        organisation.setOrganisation_Id(id);
         return organisationService.saveOrganisation(organisation);
     }
 
