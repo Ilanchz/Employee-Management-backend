@@ -9,40 +9,35 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/organisation")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class OrganisationController {
 
     @Autowired
     private OrganisationService organisationService;
 
-    // Retrieve all organisations
     @GetMapping
     public List<Organisation> getAllOrganisations() {
         return organisationService.getAllOrganisations();
     }
 
-    // Retrieve a single organisation by ID
     @GetMapping("/{id}")
     public Organisation getOrganisationById(@PathVariable Long id) {
         return organisationService.getOrganisationById(id);
     }
 
-    // Create a new organisation
     @PostMapping
     public Organisation createOrganisation(@RequestBody Organisation organisation) {
         return organisationService.saveOrganisation(organisation);
     }
 
-    // Update an existing organisation
     @PutMapping("/{id}")
     public Organisation updateOrganisation(@PathVariable Long id, @RequestBody Organisation organisation) {
         organisation.setOrganisation_Id(id);
         return organisationService.saveOrganisation(organisation);
     }
 
-    // Delete an organisation by ID
     @DeleteMapping("/{id}")
     public void deleteOrganisation(@PathVariable Long id) {
         organisationService.deleteOrganisation(id);
     }
 }
-

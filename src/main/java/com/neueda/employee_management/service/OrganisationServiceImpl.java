@@ -1,7 +1,5 @@
 package com.neueda.employee_management.service;
 
-
-
 import com.neueda.employee_management.model.Organisation;
 import com.neueda.employee_management.repository.OrganisationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class OrganisationServiceImpl implements OrganisationService {
     @Autowired
     private OrganisationRepository organisationRepository;

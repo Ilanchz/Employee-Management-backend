@@ -35,11 +35,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     public Employee createEmployee(Employee employee) {
         // Fetch the Department based on dept_ID from database
-        Department department = departmentRepository.findById(employee.getDepartment().getDept_ID())
-                .orElseThrow(() -> new IllegalArgumentException("Department not found"));
+        // Department department = departmentRepository.findById(employee.getDepartment().getDept_ID())
+        //         .orElseThrow(() -> new IllegalArgumentException("Department not found"));
 
-        // Set the fetched Department object to the Employee
-        employee.setDepartment(department);
+        // // Set the fetched Department object to the Employee
+        // employee.setDepartment(department);
 
         // Save the Employee
         return employeeRepository.save(employee);
